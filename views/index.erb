@@ -2,7 +2,7 @@
 <!-- otherwise its treated as html -->
 <% unless @name %>
   <!-- as name isn't set on the get request we see the html between
-  the < % if % > and < % end %>. However on the post request it is set
+  the < % unless % > and < % else %>. However on the post request it is set
   so this block of html is hidden -->
   <!-- / and POST determine the sinatra controller -->
   <form action="/" method="POST">
