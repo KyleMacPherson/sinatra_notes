@@ -14,8 +14,6 @@ class TestApp < Sinatra::Base
 
     # @instance variables can be passed into the view
     # but not between controllers
-    # (you can pass @@class variables between controllers or use the
-    # sessions[:hash])
     # as each request is a new instance.
     @name = "#{params[:firstname]} #{params[:lastname]}"
 
