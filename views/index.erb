@@ -1,10 +1,18 @@
-<!-- ruby code needs to be put inside icecream cones < % % > -->
-<!-- otherwise its treated as html -->
+<!--
+  ruby code needs to be put inside icecream cones < % % >
+  otherwise its treated as html
+-->
+<!--
+  as @name isn't set on the get request we see the html between
+  the < % unless %> and < % else %>. However on the post request it is set
+  so this block of html is hidden
+-->
 <% unless @name %>
-  <!-- as name isn't set on the get request we see the html between
-  the < % unless % > and < % else %>. However on the post request it is set
-  so this block of html is hidden -->
-  <!-- action="/" and method="POST" determine the sinatra controller -->
+  <!--
+    action="/" and method="POST" are used by sinatra to 
+    determine which controller handles the request
+    when this form is submited.
+  -->
   <form action="/" method="POST">
     First name:<br>
     <input type="text" name="firstname">
@@ -17,7 +25,8 @@
   </form>
 <% else %>
   <!-- if you want the output from the icecream cone tags to be
-  displayed on the page use < %= (no need to use puts) -->
+  displayed on the page use < %= to open the icecream cones
+  (no need to use puts) -->
   <h1> <%= @name %> </h1>
   <a href="/"> again? </a>
 <% end %>
